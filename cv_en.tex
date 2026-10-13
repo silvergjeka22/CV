@@ -1,0 +1,153 @@
+%============================================================
+%  Silver Gjeka — Curriculum Vitae (English version)
+%  Header Layout: Photo on Left, Name & Details on Right
+%============================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{mathptmx}                 % Times-like font
+\usepackage[top=0.7in,bottom=0.7in,left=0.85in,right=0.85in]{geometry}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.5em,itemsep=1.5pt,topsep=2pt,parsep=0pt,label=\textbullet}
+
+% ---- fine dotted separator line ----
+\newcommand{\dsep}{\par\vspace{3pt}%
+  \noindent\hbox to \linewidth{\leaders\hbox to 4.5pt{\hss\textperiodcentered\hss}\hfill}%
+  \par\vspace{3pt}}
+
+% ---- centered uppercase section heading ----
+\newcommand{\cvsec}[1]{\dsep{\centering\large\MakeUppercase{#1}\par}\vspace{3pt}}
+
+% ---- "Title .......... right-aligned" line ----
+\newcommand{\entry}[2]{\textbf{#1}\hfill\textbf{#2}\par}
+
+% ---- compact project line ----
+\newcommand{\proj}[3]{\textbf{#1}: #2 \textit{(#3)}\par\smallskip}
+
+\begin{document}
+
+%====================== HEADER (PHOTO ON LEFT, TEXT ON RIGHT) ======================
+\noindent
+\begin{minipage}[t]{0.22\textwidth}
+  \vspace{0pt}
+  \includegraphics[width=3.1cm, height=3.6cm, keepaspectratio]{photo.png}
+\end{minipage}%
+\begin{minipage}[t]{0.78\textwidth}
+  \vspace{0pt}
+  \raggedright
+  {\fontsize{24}{28}\selectfont\bfseries Silver Gjeka}\\[8pt]
+  \begin{tabular}{@{}l@{\hspace{8pt}}l@{}}
+    \textbf{Phone:}    & (+39) 351 6091609 \\[2pt]
+    \textbf{Email:}    & \href{mailto:silvergjeka@gmail.com}{silvergjeka@gmail.com} \\[2pt]
+    \textbf{GitHub:}   & \href{https://github.com/silvergjeka22}{github.com/silvergjeka22} \\[2pt]
+    \textbf{LinkedIn:} & \href{https://www.linkedin.com/in/silver-gjeka-56b9931a4/}{linkedin.com/in/silver-gjeka-56b9931a4} \\[2pt]
+    \textbf{Location:} & Verona, Italy
+  \end{tabular}
+\end{minipage}
+
+\vspace{12pt}
+
+%====================== TITLE + PROFILE ======================
+\cvsec{AI \& Software Developer}
+
+Computer Science graduate and Artificial Intelligence master's student at the University of Verona, combining solid software-engineering foundations with a strong portfolio in machine learning, deep learning and computer vision. Experienced as a full-stack developer, I build practical, data-driven applications from the model to the interface. Motivated, curious and eager to grow within a software or AI engineering team.
+
+%====================== EDUCATION ======================
+\cvsec{Education}
+
+\entry{University of Verona: M.Sc. in Artificial Intelligence}{2024 -- Present}
+Master's program focused on machine learning, deep learning, computer vision and natural language processing, combining strong theoretical foundations with hands-on AI projects. \textit{Final grade: in progress.}
+
+\vspace{6pt}
+\entry{University of Verona: B.Sc. in Computer Science}{2020 -- 2024}
+\textit{Thesis:} ``Development of a web app for monitoring IP uptime and security''.
+
+%====================== PROFESSIONAL EXPERIENCE ======================
+\cvsec{Professional Experience}
+
+\entry{BSQ: Verona, Italy}{2023 -- 2024}
+\textbf{Full Stack Developer}\par
+Designed and developed, end to end, a secure web application to monitor the uptime and security of IP devices: delivered as my Bachelor's thesis, working independently across the full stack.
+\begin{itemize}
+  \item Built asynchronous network scanning with Celery and Nmap (open-port detection, OS fingerprinting, security checks) with immediate threat notifications.
+  \item Developed an interactive dashboard with map geolocation, real-time up/down monitors and a searchable device table.
+  \item Implemented secure authentication, role-based permissions (user/admin) and multi-language support, backed by a MySQL database.
+  \item Stack: Python, Flask, Django, Celery, Nmap, MySQL, HTML, CSS, JavaScript, Bootstrap.
+\end{itemize}
+
+\vspace{6pt}
+\entry{Compass Group: Verona, Italy}{Jun 2022 -- Sep 2022}
+\textbf{Barman}\par
+\begin{itemize}
+  \item Customer service in a fast-paced environment; strengthened communication, teamwork and time management.
+\end{itemize}
+
+%====================== PROJECTS ======================
+\cvsec{Projects}
+
+\proj{Bone Fracture Detection with Explainable AI}{ResNet18 X-ray classifier whose Grad-CAM attention aligns with radiologists' annotations, with a YOLOv8 + classifier pipeline reaching 93\% accuracy.}{Python, PyTorch}
+\proj{Visual Question Answering (VQA)}{Multimodal models that answer natural-language questions about images, comparing 8 vision--language architectures (CLIP, ResNet, BERT, LSTM).}{Python, PyTorch, Transformers}
+\proj{Neuro-Symbolic Safe Driving}{Reinforcement-learning agents (DQN, PPO) made safer with traffic rules in temporal logic, cutting crashes from 35\% to 5\% in an unseen simulator.}{Python, RL}
+\proj{Lifelong Action Learning}{Video action recognizer (CNN + LSTM) on UCF101 that learns new actions over time without forgetting, using replay, distillation and MAML meta-learning.}{Python, PyTorch}
+\proj{MACURA Drone Racing}{Trained a simulated drone to race through a 3-D windy course, comparing model-based reinforcement-learning methods (MACURA, MBPO, M2AC, SAC).}{Python, MuJoCo}
+\proj{Fitness Activity Recognition}{End-to-end ML pipeline classifying six gym exercises from accelerometer/gyroscope data; best model (Random Forest) reached 98.3\% accuracy.}{Python, scikit-learn}
+\proj{CongruentClosureDAG}{DAG-based congruence-closure algorithm for the satisfiability of equality formulas with arrays, lists and uninterpreted functions, plus a graphical visualizer.}{Java}
+
+\smallskip
+\textbf{More projects:} explore the full AI \& software portfolio on \href{https://github.com/silvergjeka22}{github.com/silvergjeka22}.
+
+%====================== TECHNICAL SKILLS ======================
+\cvsec{Technical Skills}
+
+\textbf{Languages:} Python, Java, C, JavaScript, Swift, MATLAB \\[3pt]
+\textbf{AI / ML:} PyTorch, scikit-learn, Hugging Face Transformers, Computer Vision, Deep Learning, NLP, Reinforcement Learning, Explainable AI \\[3pt]
+\textbf{Web:} Flask, Django, HTML, CSS, Bootstrap \\[3pt]
+\textbf{Data \& Tools:} MySQL, pandas, NumPy, Celery, Nmap, Git/GitHub, LaTeX
+
+%====================== LANGUAGES ======================
+\cvsec{Languages}
+
+\begin{tabularx}{\textwidth}{*{3}{>{\centering\arraybackslash}X}}
+\textbf{Albanian}: Native & \textbf{Italian}: C1 & \textbf{English}: B2 \\
+\end{tabularx}
+
+%====================== ADDITIONAL ======================
+\cvsec{Additional}
+
+\textbf{Programs:} CyberChallenge.IT 2026, a national cybersecurity training program. \\[3pt]
+\textbf{Open Badges:} iOS Development with Swift; Problem Solving \& Soft Skills (University of Verona, 2022).
+
+%====================== KEY COMPETENCIES ======================
+\cvsec{Key Competencies}
+
+\begin{tabularx}{\textwidth}{*{3}{>{\centering\arraybackslash}X}}
+Machine Learning      & Deep Learning            & Computer Vision        \\[4pt]
+Full-Stack Development & Data Analysis           & Problem Solving        \\[4pt]
+Natural Language Processing & Team Collaboration & Fast Learner           \\
+\end{tabularx}
+
+%====================== REFERENCES ======================
+\cvsec{References}
+
+Available upon request.
+
+\vspace{6pt}
+{\footnotesize I authorize the processing of my personal data contained in this CV in accordance with EU Regulation 2016/679 (GDPR) and Italian Legislative Decree 196/2003.\par}
+
+%====================== SIGNATURE ======================
+\vspace{22pt}
+\begin{flushright}
+{\itshape\Large Silver Gjeka}\\[6pt]
+\rule{5.5cm}{0.4pt}\\
+{\footnotesize Signature}
+\end{flushright}
+
+\end{document}
