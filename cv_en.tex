@@ -16,21 +16,16 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=1.5em,itemsep=1.5pt,topsep=2pt,parsep=0pt,label=\textbullet}
+\setlist[itemize]{leftmargin=1.4em,itemsep=1.5pt,topsep=2pt,parsep=0pt,label=\textbullet}
 
-% ---- fine dotted separator line ----
-\newcommand{\dsep}{\par\vspace{3pt}%
-  \noindent\hbox to \linewidth{\leaders\hbox to 4.5pt{\hss\textperiodcentered\hss}\hfill}%
-  \par\vspace{3pt}}
+% ---- left-aligned small-caps section heading with rule ----
+\newcommand{\cvsec}[1]{\vspace{7pt}{\large\scshape #1}\par\vspace{1.5pt}\hrule height 0.6pt\vspace{5pt}}
 
-% ---- centered uppercase section heading ----
-\newcommand{\cvsec}[1]{\dsep{\centering\large\MakeUppercase{#1}\par}\vspace{3pt}}
+% ---- two-line entry: title (bold) + top-right / subtitle (italic) + bottom-right (italic) ----
+\newcommand{\cventry}[4]{\textbf{#1}\hfill #2\par\textit{#3}\hfill\textit{#4}\par\vspace{1pt}}
 
-% ---- "Title .......... right-aligned" line ----
-\newcommand{\entry}[2]{\textbf{#1}\hfill\textbf{#2}\par}
-
-% ---- compact project line ----
-\newcommand{\proj}[3]{\textbf{#1}: #2 \textit{(#3)}\par\smallskip}
+% ---- compact project: name (bold) + stack (italic, right), description below ----
+\newcommand{\proj}[3]{\textbf{#1}\hfill\textit{#3}\par #2\par\smallskip}
 
 \begin{document}
 
@@ -53,42 +48,51 @@
   \end{tabular}
 \end{minipage}
 
-\vspace{12pt}
+\vspace{10pt}
 
-%====================== TITLE + PROFILE ======================
-\cvsec{AI / Machine Learning Engineer}
+%====================== SUMMARY ======================
+\cvsec{Summary}
 
 Artificial Intelligence master's student and Computer Science graduate at the University of Verona, specialized in machine learning, deep learning, computer vision and natural language processing, with a strong portfolio of hands-on AI projects. Backed by solid software-engineering and full-stack foundations, I build practical, data-driven AI systems end to end, from the model to the interface. Motivated, curious and eager to grow within an AI / machine-learning engineering team.
 
 %====================== EDUCATION ======================
 \cvsec{Education}
 
-\entry{University of Verona: M.Sc. in Artificial Intelligence}{2024 -- Present}
-Master's program focused on machine learning, deep learning, computer vision and natural language processing, combining strong theoretical foundations with hands-on AI projects. \textit{Final grade: in progress.}
-
-\vspace{6pt}
-\entry{University of Verona: B.Sc. in Computer Science}{2020 -- 2024}
-\textit{Thesis:} ``Development of a web app for monitoring IP uptime and security''.
-
-%====================== PROFESSIONAL EXPERIENCE ======================
-\cvsec{Professional Experience}
-
-\entry{BSQ: Verona, Italy}{2023 -- 2024}
-\textbf{Full Stack Developer}\par
-Designed and developed, end to end, a secure web application to monitor the uptime and security of IP devices: delivered as my Bachelor's thesis, working independently across the full stack.
+\cventry{University of Verona}{Verona, Italy}{M.Sc. in Artificial Intelligence}{2024 -- Present}
 \begin{itemize}
+  \item Focused on machine learning, deep learning, computer vision and natural language processing, combining strong theoretical foundations with hands-on AI projects. \textit{Final grade: in progress.}
+\end{itemize}
+
+\cventry{University of Verona}{Verona, Italy}{B.Sc. in Computer Science}{2020 -- 2024}
+\begin{itemize}
+  \item \textit{Thesis:} ``Development of a web app for monitoring IP uptime and security.''
+\end{itemize}
+
+%====================== EXPERIENCE ======================
+\cvsec{Experience}
+
+\cventry{Full Stack Developer}{2023 -- 2024}{BSQ}{Verona, Italy}
+\begin{itemize}
+  \item Designed and developed, end to end, a secure web application to monitor the uptime and security of IP devices (Bachelor's thesis), working independently across the full stack.
   \item Built asynchronous network scanning with Celery and Nmap (open-port detection, OS fingerprinting, security checks) with immediate threat notifications.
   \item Developed an interactive dashboard with map geolocation, real-time up/down monitors and a searchable device table.
   \item Implemented secure authentication, role-based permissions (user/admin) and multi-language support, backed by a MySQL database.
   \item Stack: Python, Flask, Django, Celery, Nmap, MySQL, HTML, CSS, JavaScript, Bootstrap.
 \end{itemize}
 
-\vspace{6pt}
-\entry{Compass Group: Verona, Italy}{Jun 2022 -- Sep 2022}
-\textbf{Barman}\par
+\cventry{Barman}{Jun 2022 -- Sep 2022}{Compass Group}{Verona, Italy}
 \begin{itemize}
   \item Customer service in a fast-paced environment; strengthened communication, teamwork and time management.
 \end{itemize}
+
+%====================== TECHNICAL SKILLS ======================
+\cvsec{Technical Skills}
+
+\textbf{AI / ML:} PyTorch, scikit-learn, Hugging Face Transformers, Computer Vision, Deep Learning, NLP, Reinforcement Learning, Explainable AI \\[3pt]
+\textbf{Languages:} Python, Java, C, JavaScript, Swift, MATLAB \\[3pt]
+\textbf{Web:} Flask, Django, HTML, CSS, Bootstrap \\[3pt]
+\textbf{Data \& Tools:} MySQL, pandas, NumPy, Celery, Nmap, Git/GitHub, LaTeX \\[3pt]
+\textbf{Spoken:} Albanian (Native), Italian (C1), English (B2)
 
 %====================== PROJECTS ======================
 \cvsec{Projects}
@@ -101,53 +105,19 @@ Designed and developed, end to end, a secure web application to monitor the upti
 \proj{Fitness Activity Recognition}{End-to-end ML pipeline classifying six gym exercises from accelerometer/gyroscope data; best model (Random Forest) reached 98.3\% accuracy.}{Python, scikit-learn}
 \proj{CongruentClosureDAG}{DAG-based congruence-closure algorithm for the satisfiability of equality formulas with arrays, lists and uninterpreted functions, plus a graphical visualizer.}{Java}
 
-\smallskip
 \textbf{More projects:} explore the full AI \& software portfolio on \href{https://github.com/silvergjeka22}{github.com/silvergjeka22}.
 
-%====================== TECHNICAL SKILLS ======================
-\cvsec{Technical Skills}
+%====================== AWARDS & TRAINING ======================
+\cvsec{Awards \& Training}
 
-\textbf{Languages:} Python, Java, C, JavaScript, Swift, MATLAB \\[3pt]
-\textbf{AI / ML:} PyTorch, scikit-learn, Hugging Face Transformers, Computer Vision, Deep Learning, NLP, Reinforcement Learning, Explainable AI \\[3pt]
-\textbf{Web:} Flask, Django, HTML, CSS, Bootstrap \\[3pt]
-\textbf{Data \& Tools:} MySQL, pandas, NumPy, Celery, Nmap, Git/GitHub, LaTeX
+\cventry{CyberChallenge.IT 2026}{Italy}{National cybersecurity training program}{2026}
+\begin{itemize}
+  \item Selected through a national competitive program covering network security, web application security, cryptography and ethical hacking.
+\end{itemize}
 
-%====================== LANGUAGES ======================
-\cvsec{Languages}
-
-\begin{tabularx}{\textwidth}{*{3}{>{\centering\arraybackslash}X}}
-\textbf{Albanian}: Native & \textbf{Italian}: C1 & \textbf{English}: B2 \\
-\end{tabularx}
-
-%====================== ADDITIONAL ======================
-\cvsec{Additional}
-
-\textbf{Programs:} CyberChallenge.IT 2026, a national cybersecurity training program. \\[3pt]
 \textbf{Open Badges:} iOS Development with Swift; Problem Solving \& Soft Skills (University of Verona, 2022).
 
-%====================== KEY COMPETENCIES ======================
-\cvsec{Key Competencies}
-
-\begin{tabularx}{\textwidth}{*{3}{>{\centering\arraybackslash}X}}
-Machine Learning      & Deep Learning            & Computer Vision        \\[4pt]
-Full-Stack Development & Data Analysis           & Problem Solving        \\[4pt]
-Natural Language Processing & Team Collaboration & Fast Learner           \\
-\end{tabularx}
-
-%====================== REFERENCES ======================
-\cvsec{References}
-
-Available upon request.
-
-\vspace{6pt}
+\vspace{8pt}
 {\footnotesize I authorize the processing of my personal data contained in this CV in accordance with EU Regulation 2016/679 (GDPR) and Italian Legislative Decree 196/2003.\par}
-
-%====================== SIGNATURE ======================
-\vspace{22pt}
-\begin{flushright}
-{\itshape\Large Silver Gjeka}\\[6pt]
-\rule{5.5cm}{0.4pt}\\
-{\footnotesize Signature}
-\end{flushright}
 
 \end{document}

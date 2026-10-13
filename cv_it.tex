@@ -16,21 +16,16 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=1.5em,itemsep=1.5pt,topsep=2pt,parsep=0pt,label=\textbullet}
+\setlist[itemize]{leftmargin=1.4em,itemsep=1.5pt,topsep=2pt,parsep=0pt,label=\textbullet}
 
-% ---- linea puntinata sottile ----
-\newcommand{\dsep}{\par\vspace{3pt}%
-  \noindent\hbox to \linewidth{\leaders\hbox to 4.5pt{\hss\textperiodcentered\hss}\hfill}%
-  \par\vspace{3pt}}
+% ---- intestazione di sezione a sinistra, maiuscoletto con linea ----
+\newcommand{\cvsec}[1]{\vspace{7pt}{\large\scshape #1}\par\vspace{1.5pt}\hrule height 0.6pt\vspace{5pt}}
 
-% ---- intestazione di sezione centrata e maiuscola ----
-\newcommand{\cvsec}[1]{\dsep{\centering\large\MakeUppercase{#1}\par}\vspace{3pt}}
+% ---- voce a due righe: titolo (bold) + in alto a destra / sottotitolo (corsivo) + in basso a destra (corsivo) ----
+\newcommand{\cventry}[4]{\textbf{#1}\hfill #2\par\textit{#3}\hfill\textit{#4}\par\vspace{1pt}}
 
-% ---- riga "Titolo .......... allineato a destra" ----
-\newcommand{\entry}[2]{\textbf{#1}\hfill\textbf{#2}\par}
-
-% ---- riga progetto compatta ----
-\newcommand{\proj}[3]{\textbf{#1}: #2 \textit{(#3)}\par\smallskip}
+% ---- progetto compatto: nome (bold) + tecnologie (corsivo, a destra), descrizione sotto ----
+\newcommand{\proj}[3]{\textbf{#1}\hfill\textit{#3}\par #2\par\smallskip}
 
 \begin{document}
 
@@ -53,42 +48,51 @@
   \end{tabular}
 \end{minipage}
 
-\vspace{12pt}
+\vspace{10pt}
 
-%====================== TITOLO + PROFILO ======================
-\cvsec{Ingegnere AI / Machine Learning}
+%====================== PROFILO ======================
+\cvsec{Profilo}
 
 Studente magistrale in Intelligenza Artificiale e laureato in Informatica presso l'Università degli Studi di Verona, specializzato in machine learning, deep learning, computer vision ed elaborazione del linguaggio naturale, con un solido portfolio di progetti pratici di AI. Forte di basi consolidate in ingegneria del software e sviluppo full-stack, realizzo sistemi di AI concreti e orientati ai dati end-to-end, dal modello all'interfaccia. Motivato, curioso e desideroso di crescere all'interno di un team di ingegneria AI / machine learning.
 
 %====================== ISTRUZIONE ======================
 \cvsec{Istruzione}
 
-\entry{Università degli Studi di Verona: Laurea Magistrale in Intelligenza Artificiale}{2024 -- Presente}
-Percorso magistrale incentrato su machine learning, deep learning, computer vision ed elaborazione del linguaggio naturale, unendo solide basi teoriche a progetti pratici di intelligenza artificiale. \textit{Voto finale: in corso.}
-
-\vspace{6pt}
-\entry{Università degli Studi di Verona: Laurea Triennale in Informatica}{2020 -- 2024}
-\textit{Tesi:} ``Sviluppo di una web app per il monitoraggio dell'uptime e della sicurezza degli IP''.
-
-%====================== ESPERIENZA PROFESSIONALE ======================
-\cvsec{Esperienza Professionale}
-
-\entry{BSQ: Verona, Italia}{2023 -- 2024}
-\textbf{Full Stack Developer}\par
-Ho progettato e sviluppato, dall'inizio alla fine, una web app sicura per il monitoraggio dell'uptime e della sicurezza dei dispositivi IP: realizzata come tesi di laurea triennale, lavorando in autonomia sull'intero stack.
+\cventry{Università degli Studi di Verona}{Verona, Italia}{Laurea Magistrale in Intelligenza Artificiale}{2024 -- Presente}
 \begin{itemize}
+  \item Incentrata su machine learning, deep learning, computer vision ed elaborazione del linguaggio naturale, unendo solide basi teoriche a progetti pratici di intelligenza artificiale. \textit{Voto finale: in corso.}
+\end{itemize}
+
+\cventry{Università degli Studi di Verona}{Verona, Italia}{Laurea Triennale in Informatica}{2020 -- 2024}
+\begin{itemize}
+  \item \textit{Tesi:} ``Sviluppo di una web app per il monitoraggio dell'uptime e della sicurezza degli IP.''
+\end{itemize}
+
+%====================== ESPERIENZA ======================
+\cvsec{Esperienza}
+
+\cventry{Full Stack Developer}{2023 -- 2024}{BSQ}{Verona, Italia}
+\begin{itemize}
+  \item Ho progettato e sviluppato, dall'inizio alla fine, una web app sicura per il monitoraggio dell'uptime e della sicurezza dei dispositivi IP (tesi di laurea triennale), lavorando in autonomia sull'intero stack.
   \item Scansioni di rete asincrone con Celery e Nmap (porte aperte, identificazione del sistema operativo, controlli di sicurezza) con notifiche immediate delle minacce.
   \item Dashboard interattiva con geolocalizzazione su mappa, monitoraggio in tempo reale dei dispositivi attivi/inattivi e tabella ricercabile.
   \item Autenticazione sicura, gestione dei permessi per ruolo (utente/admin) e supporto multilingua, con database MySQL.
   \item Tecnologie: Python, Flask, Django, Celery, Nmap, MySQL, HTML, CSS, JavaScript, Bootstrap.
 \end{itemize}
 
-\vspace{6pt}
-\entry{Compass Group: Verona, Italia}{Giu 2022 -- Set 2022}
-\textbf{Barman}\par
+\cventry{Barman}{Giu 2022 -- Set 2022}{Compass Group}{Verona, Italia}
 \begin{itemize}
   \item Servizio al cliente in un ambiente dinamico; capacità di comunicazione, lavoro di squadra e gestione del tempo.
 \end{itemize}
+
+%====================== COMPETENZE TECNICHE ======================
+\cvsec{Competenze Tecniche}
+
+\textbf{AI / ML:} PyTorch, scikit-learn, Hugging Face Transformers, Computer Vision, Deep Learning, NLP, Reinforcement Learning, Explainable AI \\[3pt]
+\textbf{Linguaggi:} Python, Java, C, JavaScript, Swift, MATLAB \\[3pt]
+\textbf{Web:} Flask, Django, HTML, CSS, Bootstrap \\[3pt]
+\textbf{Dati \& Strumenti:} MySQL, pandas, NumPy, Celery, Nmap, Git/GitHub, LaTeX \\[3pt]
+\textbf{Lingue:} Albanese (madrelingua), Italiano (C1), Inglese (B2)
 
 %====================== PROGETTI ======================
 \cvsec{Progetti}
@@ -101,53 +105,19 @@ Ho progettato e sviluppato, dall'inizio alla fine, una web app sicura per il mon
 \proj{Riconoscimento di Attività Fisiche}{Pipeline di machine learning end-to-end che classifica sei esercizi in palestra da dati di accelerometro/giroscopio; il modello migliore (Random Forest) raggiunge il 98.3\%.}{Python, scikit-learn}
 \proj{CongruentClosureDAG}{Algoritmo di congruence closure basato su DAG per la soddisfacibilità di formule di uguaglianza con array, liste e funzioni non interpretate, con visualizzatore grafico.}{Java}
 
-\smallskip
 \textbf{Altri progetti:} il portfolio completo di AI e software è su \href{https://github.com/silvergjeka22}{github.com/silvergjeka22}.
 
-%====================== COMPETENZE TECNICHE ======================
-\cvsec{Competenze Tecniche}
+%====================== RICONOSCIMENTI & FORMAZIONE ======================
+\cvsec{Riconoscimenti \& Formazione}
 
-\textbf{Linguaggi:} Python, Java, C, JavaScript, Swift, MATLAB \\[3pt]
-\textbf{AI / ML:} PyTorch, scikit-learn, Hugging Face Transformers, Computer Vision, Deep Learning, NLP, Reinforcement Learning, Explainable AI \\[3pt]
-\textbf{Web:} Flask, Django, HTML, CSS, Bootstrap \\[3pt]
-\textbf{Dati \& Strumenti:} MySQL, pandas, NumPy, Celery, Nmap, Git/GitHub, LaTeX
+\cventry{CyberChallenge.IT 2026}{Italia}{Programma nazionale di formazione in cybersecurity}{2026}
+\begin{itemize}
+  \item Selezionato tramite un programma nazionale competitivo su network security, web application security, crittografia ed ethical hacking.
+\end{itemize}
 
-%====================== LINGUE ======================
-\cvsec{Lingue}
-
-\begin{tabularx}{\textwidth}{*{3}{>{\centering\arraybackslash}X}}
-\textbf{Albanese}: Madrelingua & \textbf{Italiano}: C1 & \textbf{Inglese}: B2 \\
-\end{tabularx}
-
-%====================== ALTRO ======================
-\cvsec{Altro}
-
-\textbf{Programmi:} CyberChallenge.IT 2026, programma nazionale di formazione in cybersecurity. \\[3pt]
 \textbf{Open Badge:} Sviluppo iOS con Swift; Problem Solving e Soft Skills (Università degli Studi di Verona, 2022).
 
-%====================== COMPETENZE PRINCIPALI ======================
-\cvsec{Competenze Principali}
-
-\begin{tabularx}{\textwidth}{*{3}{>{\centering\arraybackslash}X}}
-Machine Learning        & Deep Learning            & Computer Vision         \\[4pt]
-Sviluppo Full-Stack     & Analisi dei Dati         & Problem Solving         \\[4pt]
-Elaborazione del Linguaggio & Lavoro di Squadra    & Apprendimento Rapido    \\
-\end{tabularx}
-
-%====================== REFERENZE ======================
-\cvsec{Referenze}
-
-Disponibili su richiesta.
-
-\vspace{6pt}
+\vspace{8pt}
 {\footnotesize Autorizzo il trattamento dei miei dati personali contenuti nel presente CV ai sensi del Regolamento UE 2016/679 (GDPR) e del D.Lgs. 196/2003.\par}
-
-%====================== FIRMA ======================
-\vspace{22pt}
-\begin{flushright}
-{\itshape\Large Silver Gjeka}\\[6pt]
-\rule{5.5cm}{0.4pt}\\
-{\footnotesize Firma}
-\end{flushright}
 
 \end{document}
